@@ -3,8 +3,6 @@ name: Importar proyecto de invitación
 on:
   workflow_dispatch:
   push:
-    paths:
-      - '.github/workflows/import-project.yml'
 
 permissions:
   contents: write
