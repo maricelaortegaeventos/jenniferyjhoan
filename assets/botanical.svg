@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="900" viewBox="0 0 700 900">
+  <defs>
+    <linearGradient id="leafA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b8d1be"/><stop offset="1" stop-color="#5d826d"/></linearGradient>
+    <linearGradient id="leafB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d5e2d3"/><stop offset="1" stop-color="#789a83"/></linearGradient>
+    <radialGradient id="petal"><stop offset="0" stop-color="#fffef8"/><stop offset=".72" stop-color="#f5f1df"/><stop offset="1" stop-color="#ddd8c8"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="0.45"/></filter>
+    <filter id="water"><feTurbulence type="fractalNoise" baseFrequency="0.018" numOctaves="2" seed="4" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+  </defs>
+  <g opacity=".92" filter="url(#water)">
+    <path d="M86 874 C172 690 188 488 326 286 C410 163 514 82 642 28" fill="none" stroke="#6f8f77" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+    <g fill="url(#leafA)" opacity=".88">
+      <ellipse cx="126" cy="773" rx="58" ry="27" transform="rotate(-36 126 773)"/>
+      <ellipse cx="163" cy="708" rx="52" ry="25" transform="rotate(26 163 708)"/>
+      <ellipse cx="185" cy="638" rx="60" ry="29" transform="rotate(-28 185 638)"/>
+      <ellipse cx="224" cy="570" rx="55" ry="27" transform="rotate(30 224 570)"/>
+      <ellipse cx="258" cy="497" rx="60" ry="28" transform="rotate(-27 258 497)"/>
+      <ellipse cx="302" cy="426" rx="52" ry="25" transform="rotate(32 302 426)"/>
+      <ellipse cx="346" cy="352" rx="56" ry="27" transform="rotate(-26 346 352)"/>
+      <ellipse cx="399" cy="286" rx="52" ry="25" transform="rotate(35 399 286)"/>
+      <ellipse cx="455" cy="220" rx="53" ry="25" transform="rotate(-24 455 220)"/>
+      <ellipse cx="515" cy="162" rx="46" ry="23" transform="rotate(34 515 162)"/>
+      <ellipse cx="575" cy="104" rx="42" ry="21" transform="rotate(-24 575 104)"/>
+    </g>
+    <g fill="url(#leafB)" opacity=".68">
+      <ellipse cx="106" cy="824" rx="46" ry="23" transform="rotate(28 106 824)"/>
+      <ellipse cx="203" cy="675" rx="43" ry="21" transform="rotate(-48 203 675)"/>
+      <ellipse cx="293" cy="532" rx="45" ry="22" transform="rotate(48 293 532)"/>
+      <ellipse cx="393" cy="374" rx="44" ry="21" transform="rotate(-46 393 374)"/>
+      <ellipse cx="494" cy="242" rx="42" ry="20" transform="rotate(48 494 242)"/>
+    </g>
+    <g filter="url(#soft)">
+      <g transform="translate(162 607)">
+        <ellipse rx="27" ry="47" transform="rotate(0)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(72)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(144)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(216)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(288)" fill="url(#petal)"/>
+        <circle r="13" fill="#c7a564"/>
+      </g>
+      <g transform="translate(365 326) scale(.82)">
+        <ellipse rx="27" ry="47" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(72)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(144)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(216)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(288)" fill="url(#petal)"/>
+        <circle r="13" fill="#c7a564"/>
+      </g>
+      <g transform="translate(545 140) scale(.62)">
+        <ellipse rx="27" ry="47" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(72)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(144)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(216)" fill="url(#petal)"/>
+        <ellipse rx="27" ry="47" transform="rotate(288)" fill="url(#petal)"/>
+        <circle r="13" fill="#c7a564"/>
+      </g>
+    </g>
+  </g>
+</svg>
