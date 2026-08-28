@@ -1,0 +1,45 @@
+name: Importar proyecto de invitación
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/import-project.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Descargar archivos del proyecto anterior
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets
+          BASE='https://raw.githubusercontent.com/rortegani/invitacion/main'
+          curl -fsSL "$BASE/styles.css" -o styles.css
+          curl -fsSL "$BASE/script.js" -o script.js
+          curl -fsSL "$BASE/que-suerte-tenerte.mp3" -o que-suerte-tenerte.mp3
+          curl -fsSL "$BASE/assets/botanical.svg" -o assets/botanical.svg
+          curl -fsSL "$BASE/assets/favicon.svg" -o assets/favicon.svg
+          curl -fsSL "$BASE/assets/og-preview.png" -o assets/og-preview.png
+          curl -fsSL "$BASE/assets/og-preview.svg" -o assets/og-preview.svg
+          curl -fsSL "$BASE/assets/paper-texture.svg" -o assets/paper-texture.svg
+
+      - name: Guardar proyecto en este repositorio
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add styles.css script.js que-suerte-tenerte.mp3 assets/
+          if git diff --cached --quiet; then
+            echo 'No hay cambios para guardar.'
+          else
+            git commit -m 'Importar archivos completos de la invitación'
+            git push
+          fi
